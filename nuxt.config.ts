@@ -17,11 +17,25 @@ const config: NuxtConfiguration = {
   },
   loading: { color: '#fff' },
   css: [],
-  plugins: [],
+  plugins: [
+    '~/plugins/cookies.ts',
+    '~/plugins/environments.ts'
+  ],
   modules: ['@nuxtjs/pwa', '@nuxtjs/eslint-module'],
   build: {
-    /* eslint-disable @typescript-eslint/no-unused-vars */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
+        if (!config.module) {
+          return
+        }
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    }
   }
 }
 
