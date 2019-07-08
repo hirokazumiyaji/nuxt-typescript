@@ -2,8 +2,13 @@ import Vuex from 'vuex'
 
 export interface State {}
 
-const createStore = () => {
-  return new Vuex.Store({})
-}
+export const state = () => ({})
 
-export default createStore
+export const getters = ({})
+
+export const mutations = ({})
+
+export const actions = ({
+  nuxtServerInit() {
+  }
+})
