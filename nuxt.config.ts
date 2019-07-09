@@ -21,7 +21,11 @@ const config: NuxtConfiguration = {
     '~/plugins/cookies.ts',
     '~/plugins/environments.ts'
   ],
-  modules: ['@nuxtjs/pwa', '@nuxtjs/eslint-module'],
+  modules: [
+    '@nuxtjs/pwa',
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/axios'
+  ],
   build: {
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
