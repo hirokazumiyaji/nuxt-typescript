@@ -1,5 +1,3 @@
-import Vuex from 'vuex'
-
 export interface State {}
 
 export const state = () => ({})
