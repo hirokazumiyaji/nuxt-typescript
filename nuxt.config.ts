@@ -19,13 +19,10 @@ const config: NuxtConfiguration = {
   css: [],
   plugins: [
     '~/plugins/cookies.ts',
-    '~/plugins/environments.ts'
+    '~/plugins/environments.ts',
+    '~/plugins/firebase.ts'
   ],
-  modules: [
-    '@nuxtjs/pwa',
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/axios'
-  ],
+  modules: ['@nuxtjs/pwa', '@nuxtjs/eslint-module', '@nuxtjs/axios'],
   build: {
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
